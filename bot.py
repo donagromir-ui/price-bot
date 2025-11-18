@@ -12,7 +12,8 @@ from aiogram.types import FSInputFile
 logging.basicConfig(level=logging.INFO)
 
 # ================== БОТ ==================
-bot = Bot(token=os.getenv("BOT_TOKEN"), parse_mode="HTML")
+bot = Bot(token=os.getenv("BOT_TOKEN"))
+bot = bot.with_parse_mode("HTML")
 dp = Dispatcher()
 
 # ================== ЗАГРУЗКА ПРАЙСА ==================
