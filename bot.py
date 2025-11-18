@@ -12,9 +12,11 @@ from aiogram.types import FSInputFile
 logging.basicConfig(level=logging.INFO)
 
 # ================== БОТ ==================
-bot = Bot(token=os.getenv("BOT_TOKEN"))
-bot = bot.with_parse_mode("HTML")
-dp = Dispatcher()
+from aiogram import Bot, Dispatcher
+from aiogram.enums import ParseMode
+
+bot = Bot(token=os.getnv("BOT_TOKEN"))
+dp = Dispatcher(bot=bot)
 
 # ================== ЗАГРУЗКА ПРАЙСА ==================
 df = pd.DataFrame()
