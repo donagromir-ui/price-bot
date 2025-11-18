@@ -3,23 +3,18 @@ import logging
 from pathlib import Path
 
 import pandas as pd
-from aiogram import Bot, Dispatcher, types
-from aiogram.filters import Command
-from aiogram import F
-from aiogram.types import FSInputFile
+from aiogram import Bot, Dispatcher, types, F
+from aiogram.client.default import DefaultBotProperties
+from aiogram.enums import ParseMode
 
 # ================== ЛОГИ ==================
 logging.basicConfig(level=logging.INFO)
 
 # ================== БОТ ==================
-from aiogram import Bot, Dispatcher, types
-from aiogram.enums import ParseMode
-import os
-import logging
-
-logging.basicConfig(level=logging.INFO)
-
-bot = Bot(token=os.getenv("BOT_TOKEN"), parse_mode=ParseMode.HTML)
+bot = Bot(
+    token=os.getenv("BOT_TOKEN"),
+    default=DefaultBotProperties(parse_mode=ParseMode.HTML)
+)
 dp = Dispatcher()
 
 # ================== ЗАГРУЗКА ПРАЙСА ==================
